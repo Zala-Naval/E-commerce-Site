@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Cart - ShopEase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2m4OCIdWncZaWe1xovQ2xsxGb-YGHmi76GA&s">
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,.1);
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        }
+
+            .cart-item img {
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
+                border-radius: 8px;
+            }
+
+        .cart-info {
+            flex: 1;
+            margin-left: 15px;
+        }
+
+        .qty-input {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold">ShopEase</a>
+            <a id="continue" class="btn btn-outline-primary" href="homescreen.html">Continue Shopping</a>
+        </div>
+    </nav>
+
+    <div class="container py-5 mt-5">
+        <h2 class="mb-4">My Cart</h2>
+
+        <div id="cartContainer"></div>
+
+        <div class="d-flex justify-content-between mt-4 align-items-center">
+            <h4>Total: $<span id="totalPrice">0</span></h4>
+            <button class="btn btn-success" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="successMsg" class="toast align-items-center text-bg-success border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body" id="toastText">
+                    Message here
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        // Load cart items from localStorage
+        function loadCart() {
+
+            let cart = JSON.parse(localStorage.getItem(loggedInUser.email)) || [];
+            const container = document.getElementById("cartContainer");
+            container.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price * item.qty;
+
+                container.innerHTML += `
+        <div class="cart-item">
+            <img src="${item.image}" alt="${item.title}">
+                <div class="cart-info">
+                    <h5>${item.title}</h5>
+                    <p>$${item.price} x <input type="number" min="1" value="${item.qty}" class="qty-input" onchange="updateQty(${index}, this.value)"></p>
+                </div>
+                <button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Remove</button>
+        </div>
+        `;
+            });
+
+            document.getElementById("totalPrice").innerText = total;
+        }
+
+        // Update quantity
+        function updateQty(index, value) {
+            let cart = JSON.parse(localStorage.getItem(loggedInUser.email)) || [];
+            cart[index].qty = parseInt(value);
+            localStorage.setItem(loggedInUser.email, JSON.stringify(cart));
+            loadCart();
+        }
+
+        // Remove item
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem(loggedInUser.email)) || [];
+            cart.splice(index, 1);
+            localStorage.setItem(loggedInUser.email, JSON.stringify(cart));
+            loadCart();
+        }
+
+        // Checkout
+        function checkout() {
+            const totalText = document.getElementById("totalPrice").innerText;
+            const total = totalText.replace(/[^\d.]/g, ""); // extract number
+
+            showToast(`Checkout successful! Total: $${total} 🎉`, "success");
+
+            localStorage.removeItem(loggedInUser.email);
+            loadCart();
+        }
+
+        // Initial load
+        loadCart();
+
+        // tost massage handler
+        function showToast(message, type = "success") {
+            const toastEl = document.getElementById("successMsg");
+            const toastText = document.getElementById("toastText");
+
+            toastEl.className = `toast align-items-center text-bg-${type} border-0`;
+            toastText.innerText = message;
+
+            const toast = new bootstrap.Toast(toastEl, { delay: 2000 });
+            toast.show();
+        }
+
+    </script>
+
+</body>
+</html>

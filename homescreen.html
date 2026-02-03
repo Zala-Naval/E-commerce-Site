@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShopEase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2m4OCIdWncZaWe1xovQ2xsxGb-YGHmi76GA&s">
+    <link rel="stylesheet" href="styles.css"> 
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- NavBar Items -->
+        <div class="container">
+            <a class="navbar-brand">ShopeEase</a>
+            <div class="collapse navbar-collapse" id="menu">
+
+                <div id="navitem" class="navbar-nav ms-auto">
+                    <!-- Default links -->
+                    <a class="nav-link" href="sing_up.html">SignUp</a>
+                    <a class="nav-link" href="login.html">Login</a>
+
+                </div>
+
+                <a id="cart-link" class="nav-link cart-link" href="details.html" style="display:none;">
+                    <span class="material-icons">shopping_cart</span>
+                </a>
+                <button id="logout-link" class="logout-btn" style="display:none;" onclick="removeUser()" ;>
+                    Logout
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container py-5 mt-5">
+        <!--Showing Text Only-->
+        <div class="container py-5">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+                    <div>
+                        <h1 class="fw-bold">Welcome to ShopeEase</h1>
+                        <p class="lead">
+                            At ShopEase, we believe shopping should be simple and fun. Discover quality products, secure payments, and quick delivery — all designed to give you the best shopping experience.
+                        </p>
+
+                        <a href="#product" class="btn btn-primary btn-lg">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 text-center">
+                    <div>
+                        <img src="pngegg.png"
+                             class="img-fluid"
+                             alt="Banner Image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- SUCCESS MESSAGE ALERT -->
+       
+
+        <div class="row g-4">
+
+            <!-- PRODUCT CARD -->
+            <div id="product" class="col-md-4">
+                <div class="card service-card product-card">
+                    <div class="card-body">
+
+                        <h6 class="product-title">Apple Watch</h6>
+
+                        <div class="product-image-wrapper">
+                            <img src="https://shoppingvelleys.com/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-02-at-13.01.51-1.jpeg"
+                                 class="product-image">
+
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-btn">Add to Cart</button>
+                                <button class="btn btn-outline-light view-btn">View Details</button>
+                            </div>
+                        </div>
+
+                        <h6 class="product-price mt-2">$299</h6>
+                        <p class="product-description small text-muted">
+                            Latest Apple Smartwatch with premium design and features.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT CARD -->
+            <div class="col-md-4">
+                <div class="card service-card product-card">
+                    <div class="card-body">
+
+                        <h6 class="product-title">Apple-15 Pro</h6>
+
+                        <div class="product-image-wrapper">
+                            <img src="https://cdn.beebom.com/mobile/apple-iphone-16-pro-max-front-and-back10.png"
+                                 class="product-image">
+
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-btn">Add to Cart</button>
+                                <button class="btn btn-outline-light view-btn">View Details</button>
+                            </div>
+                        </div>
+
+                        <h6 class="product-price mt-2">$799</h6>
+                        <p class="product-description small text-muted overflow-auto text-wrap">
+                            Apple iPhone 15 Pro delivers powerful performance with the A17 Pro chip and a
+                            lightweight titanium design. It features a stunning ProMotion display,
+                            advanced camera system, and all-day battery life for premium everyday use..."
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT CARD -->
+            <div class="col-md-4">
+                <div class="card service-card product-card">
+                    <div class="card-body">
+
+                        <h6 class="product-title">Apple-16 Pro</h6>
+
+                        <div class="product-image-wrapper">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjms2wVdhNiYxiuSzlDKekvtSM3KroCSAABA&s"
+                                 class="product-image">
+
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-btn">Add to Cart</button>
+                                <button class="btn btn-outline-light view-btn">View Details</button>
+                            </div>
+                        </div>
+
+                        <h6 class="product-price mt-2">$999</h6>
+                        <p class="product-description small text-muted">
+                            iPhone 16 features the A18 chip, improved cameras, and a sleek design. Enjoy vibrant display, fast performance, and all-day battery life.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT CARD -->
+            <div class="col-md-4">
+                <div class="card service-card product-card">
+                    <div class="card-body">
+
+                        <h6 class="product-title">Noise Smart watch</h6>
+
+                        <div class="product-image-wrapper">
+                            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRhh2y6pSAd0KBFZVzEuCRHGlylavmanyJnDsNujzrKBzKEu1QtNSmLm3yodxvBt2Z_fTWVlUy3R8ejfU3FgtSZ2h3Jj_yoKA"
+                                 class="product-image">
+
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-btn">Add to Cart</button>
+                                <button class="btn btn-outline-light view-btn">View Details</button>
+                            </div>
+                        </div>
+
+                        <h6 class="product-price mt-2">$199</h6>
+                        <p class="product-description small text-muted">
+                            Noise Smartwatch tracks fitness, monitors heart rate, and offers notifications with a sleek, durable design.
+                            It also features long battery life and customizable watch faces for everyday use.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT CARD -->
+            <div class="col-md-4">
+                <div class="card service-card product-card">
+                    <div class="card-body">
+
+                        <h6 class="product-title">Noise-fit smart watch</h6>
+
+                        <div class="product-image-wrapper">
+                            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTDVRw5AxixLwUcuKqvGXqFBGM1rZXRG3_ol3Eb2CeVrJZeroTnB3l_oCPOKacPURWLmwyJyLmqJr0Q3cMj8mbSWrhYhoDL"
+                                 class="product-image">
+
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-btn">Add to Cart</button>
+                                <button class="btn btn-outline-light view-btn">View Details</button>
+                            </div>
+                        </div>
+
+                        <h6 class="product-price mt-2">$299</h6>
+                        <p class="product-description small text-muted">
+                            Noise-fit Smartwatch offers real-time fitness tracking, heart rate monitoring, and sleep analysis.
+                            It comes with a lightweight design, long battery life, and customizable watch faces.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT CARD -->
+            <div class="col-md-4">
+                <div class="card service-card product-card">
+                    <div class="card-body">
+
+                        <h6 class="product-title">T-shirt</h6>
+
+                        <div class="product-image-wrapper">
+                            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRwdVQa9ACsTRdahV0zsl-doFKoKfvX7Zid1JhoGcC34FP91A2cY45A_iJiW7WS4k9kEyU68e6aM19MieKhKMQtLpsV1srdH4PUof8veQG6G6vvQLOV4defdA"
+                                 class="product-image">
+
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-btn">Add to Cart</button>
+                                <button class="btn btn-outline-light view-btn">View Details</button>
+                            </div>
+                        </div>
+
+                        <h6 class="product-price mt-2">$99</h6>
+                        <p class="product-description small text-muted">
+                            Comfortable cotton T-shirt with a classic fit and soft fabric.
+                            Available in multiple colors, perfect for casual everyday wear.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT CARD -->
+            <div class="col-md-4">
+                <div class="card service-card product-card">
+                    <div class="card-body">
+
+                        <h6 class="product-title">Samsung Smart Watch</h6>
+
+                        <div class="product-image-wrapper">
+                            <img src="https://themesberg.com/docs/neumorphism-ui/assets/img/shop/item-1.png"
+                                 class="product-image">
+
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-btn">Add to Cart</button>
+                                <button class="btn btn-outline-light view-btn">View Details</button>
+                            </div>
+                        </div>
+
+                        <h6 class="product-price mt-2">$349</h6>
+                        <p class="product-description small text-muted">
+                            Samsung Galaxy Smartwatch with fitness tracking and heart rate monitoring.
+                            Sleek design, long battery life, and customizable watch faces for everyday use.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+
+            <img id="modalImage">
+            <h5 id="modalTitle"></h5>
+            <p id="modalDescription"></p>
+            <h6 id="modalPrice"></h6>
+
+            <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-primary">Buy Now</button>
+                <button class="btn btn-outline-primary" onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer text-white pt-5 pb-3" style="background-color: #182842">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+                <!-- Column 1 -->
+                <div class="col-md-4 mb-4">
+                    <h5>About ShopEase</h5>
+                    <p>ShopEase is your go-to online store for all tech gadgets and accessories. Fast delivery and top quality products!</p>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="homescreen.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="login.html" class="text-white text-decoration-none">Login</a></li>
+                        <li><a href="sing_up.html" class="text-white text-decoration-none">Sign Up</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@shopease.com</p>
+                    <p>Phone: +91 9713797357</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom text-center pt-3 border-top border-secondary mt-3">
+                &copy; 2026 ShopEase. All Rights Reserved.
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="successMsg" class="toast align-items-center text-bg-success border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body" id="toastText">
+                    Message here
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="func.js"></script>
+
+</body>
+</html>
