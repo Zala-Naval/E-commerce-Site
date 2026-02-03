@@ -45,7 +45,7 @@ function closeModal() {
         }
 
         /* ADD TO CART FROM CARD */
-        document.querySelectorAll(".add-btn").forEach(btn => {
+document.querySelectorAll(".add-btn").forEach(btn => {
         btn.addEventListener("click", function () {
             const card = this.closest(".product-card");
 
@@ -126,7 +126,7 @@ function removeUser() {
     successMsg.classList.remove("d-none");
 
             setTimeout(() => {
-        window.location.href = "homescreen.html";
+        window.location.href = "index.html";
             } , 2000);
             
 }
